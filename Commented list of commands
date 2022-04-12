@@ -1,0 +1,34 @@
+sudo apt update //make sure you are all up to date
+sudo apt upgrade //make sure you are all up to date
+
+//add more swap if necessary, this will allocate 5 gigs
+sudo mkdir /swapfile  //creating the swapfile
+sudo fallocate -l 5g /swapfile  //allocating the HDD space for Swap
+//if the previous command fails try one of the following
+//sudo dd if=/dev/zero of=/swapfile bs=1024 count=5242876
+//sudo dd if=/dev/zero of=/swapfile bs=1g count=5
+mkswap /swapfile  //designating the file as Swap space
+swapon /swapfile  //making the swapfile available for use
+echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab  //making the Swap space permanent
+//sanity check
+swapon -s  //checks the swapspace
+free -h  //displays the available ram and Swap(vram)
+
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"  //Installing the solana tool set
+
+//New wallet creation
+solana-keygen new
+
+//transfer existing wallet
+solana-keygen recover
+//follow the prompts
+
+curl https://sh.rustup.rs -sSf | sh  //Installing rust programming language
+
+sudo apt install libudev-dev  //the following 3 commands prevent future hiccups with the tokens
+
+sudo apt install libssl-dev pkg-config
+
+sudo apt install build-essential
+
+cargo install spl-token-cli  //this installs the cli tools to create and share tokens (this is where I was having difficulties and NEEDED to increase the vram)
