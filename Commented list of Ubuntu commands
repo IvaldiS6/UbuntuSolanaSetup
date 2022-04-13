@@ -1,33 +1,49 @@
-sudo apt update //make sure you are all up to date
-sudo apt upgrade //make sure you are all up to date
+//make sure you are all up to date
+sudo apt update 
+//make sure you are all up to date
+sudo apt upgrade 
 
 //add more swap if necessary, this will allocate 5 gigs
-sudo fallocate -l 5g /swapfile  //allocating the HDD space for Swap
+//allocating the HDD space for Swap
+sudo fallocate -l 5g /swapfile  
 //if the previous command fails try one of the following
 //sudo dd if=/dev/zero of=/swapfile bs=1024 count=5242876
 //sudo dd if=/dev/zero of=/swapfile bs=1g count=5
-mkswap /swapfile  //designating the file as Swap space
-swapon /swapfile  //making the swapfile available for use
-echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab  //making the Swap space permanent
-//sanity check
-swapon -s  //checks the swapspace
-free -h  //displays the available ram and Swap(vram)
 
-sh -c "$(curl -sSfL https://release.solana.com/stable/install)"  //Installing the solana tool set
+//designating the file as Swap space
+sudo mkswap /swapfile  
+//making the swapfile available for use
+sudo swapon /swapfile  
+//making the Swap space permanent
+echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab  
+
+//sanity check
+//checks the swapspace
+swapon -s  
+//displays the available ram and Swap(vram)
+free -h  
+
+//Installing the solana tool set
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"  
 
 //New wallet creation
 solana-keygen new
+
+//OR
 
 //transfer existing wallet
 solana-keygen recover
 //follow the prompts
 
-curl https://sh.rustup.rs -sSf | sh  //Installing rust programming language
+//Installing rust programming language
+curl https://sh.rustup.rs -sSf | sh  
 
-sudo apt install libudev-dev  //the following 3 commands are supposed to prevent future hiccups with the tokens
+//the following 3 commands are supposed to prevent future hiccups with the tokens
+sudo apt install libudev-dev  
 
 sudo apt install libssl-dev pkg-config
 
 sudo apt install build-essential
 
-cargo install spl-token-cli  //this installs the cli tools to create and share tokens (this is where I was having difficulties and NEEDED to increase the vram.  It also takes a long time to finish)
+//this installs the cli tools to create and share tokens (this is where I was having difficulties and NEEDED to increase the vram.  It also takes a long time to finish)
+cargo install spl-token-cli
