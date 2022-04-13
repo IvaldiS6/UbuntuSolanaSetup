@@ -47,3 +47,8 @@ sudo apt install build-essential
 
 //this installs the cli tools to create and share tokens (this is where I was having difficulties and NEEDED to increase the vram.  It also takes a long time to finish)
 cargo install spl-token-cli
+
+
+//That is it, you should be all ready to start minting tokens.  Please leave feedback, it is much appreciated!  
+
+//Thank you.
