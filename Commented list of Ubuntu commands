@@ -2,7 +2,6 @@ sudo apt update //make sure you are all up to date
 sudo apt upgrade //make sure you are all up to date
 
 //add more swap if necessary, this will allocate 5 gigs
-sudo mkdir /swapfile  //creating the swapfile
 sudo fallocate -l 5g /swapfile  //allocating the HDD space for Swap
 //if the previous command fails try one of the following
 //sudo dd if=/dev/zero of=/swapfile bs=1024 count=5242876
