@@ -31,4 +31,4 @@ sudo apt install libssl-dev pkg-config
 
 sudo apt install build-essential
 
-cargo install spl-token-cli  //this installs the cli tools to create and share tokens (this is where I was having difficulties and NEEDED to increase the vram)
+cargo install spl-token-cli  //this installs the cli tools to create and share tokens (this is where I was having difficulties and NEEDED to increase the vram.  It also takes a long time to finish)
