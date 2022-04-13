@@ -24,7 +24,7 @@ solana-keygen recover
 
 curl https://sh.rustup.rs -sSf | sh  //Installing rust programming language
 
-sudo apt install libudev-dev  //the following 3 commands prevent future hiccups with the tokens
+sudo apt install libudev-dev  //the following 3 commands are supposed to prevent future hiccups with the tokens
 
 sudo apt install libssl-dev pkg-config
 
