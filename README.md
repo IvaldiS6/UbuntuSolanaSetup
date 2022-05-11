@@ -11,3 +11,7 @@ sudo fallocate -l 5g /swapfile
 //If that doesn't work try one of the following:
 //sudo dd if=/dev/zero of=/swapfile bs=1024 count=5242876
 //sudo dd if=/dev/zero of=/swapfile bs=1g count=5
+
+
+
+(If you found this useful and want to send a beer or something: SOL 9ZWYoRJq6i9qduZDkmRtx5aZjfY1ZfBuo2ZXXy3XefU6)
